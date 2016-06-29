@@ -11,16 +11,13 @@ module.exports = function (grunt) {
                         ["babelify", {
                             loose: "all"
                         }]
-                    ],
-                    browserifyOptions: {
-                        debug: true
-                    }
+                    ]
                 },
                 files: {
                     // if the source file has an extension of es6 then
                     // we change the name of the source file accordingly.
                     // The result file's extension is always .js
-                    "./js/appBundle.js": ["./app/app.js"]
+                    "./build/appBundle.js": ["./app/app.js"]
                 }
             }
         },
@@ -36,7 +33,7 @@ module.exports = function (grunt) {
                     sourceMap: true,
                 },
                 files: {
-                    './js/appBundle.min.js': ["./js/appBundle.js"]
+                    './js/appBundle.min.js': ["./build/appBundle.js"]
                 }
             }
         }

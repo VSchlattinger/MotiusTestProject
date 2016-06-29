@@ -21,13 +21,15 @@ export default ['$scope', '$mdDialog', 'UseCasesService', function ($scope, $mdD
 
     $scope.showMilestones = function (ev, usecase) {
         "use strict";
-        // TODO: pass data to dialog
         $mdDialog.show({
             controller: 'MilestonesController',
             templateUrl: './app/view/milestones.html',
             targetEvent: ev,
             clickOutsideToClose: true,
-            ariaLabel: 'Milestones'
+            ariaLabel: 'Milestones',
+            locals: {
+                usecase
+            }
         });
     };
 }]

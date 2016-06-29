@@ -1,0 +1,8 @@
+.my-card-fullwidth {
+    width: 100%;
+    min-height: 0;
+}
+
+.mdl-grid {
+    max-width: 1170px;
+}

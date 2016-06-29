@@ -4,21 +4,31 @@
 
 import angular from 'angular'
 import 'angular-route'
+import 'angular-animate'
+import 'angular-material'
 
-import mainController from './controller/MainController'
+import usecasesController from './controller/UsecasesController'
 
 'use strict';
-var app = angular.module('TestProject', ['ngRoute']);
+var app = angular.module('TestProject', ['ngRoute', 'ngAnimate', 'ngMaterial']);
 
-app.config(['$routeProvider', function ($routeProvider) {
+app
+    .config(['$routeProvider', function ($routeProvider) {
 
-    $routeProvider
-    // route for the home page
-        .when('/', {
-            templateUrl: 'app/view/start.html',
-            controller:  'MainController'
-        })
-        .otherwise({redirectTo: '/'});
-}]);
+        $routeProvider
+        // route for the home page
+            .when('/', {
+                templateUrl: 'app/view/usecases.html',
+                controller: 'UseCasesController'
+            })
+            .otherwise({redirectTo: '/'});
+    }])
 
-app.controller('MainController', mainController);
+    .config(['$mdThemingProvider', function ($mdThemingProvider) {
+        $mdThemingProvider.theme('default')
+            .primaryPalette('red')
+            .accentPalette('indigo');
+    }]);
+
+
+app.controller('UseCasesController', usecasesController);

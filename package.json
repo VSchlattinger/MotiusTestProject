@@ -14,7 +14,9 @@
   ],
   "dependencies": {
     "angular": "~1.5.7",
-    "angular-route": "~1.5.7"
+    "angular-route": "~1.5.7",
+    "angular-material": "~1.0.9",
+    "angular-animate": "~1.5.7"
   },
   "devDependencies": {
     "grunt": "latest",

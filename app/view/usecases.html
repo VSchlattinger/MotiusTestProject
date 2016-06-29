@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--4-col" ng-repeat="card in cards">
+        <div class="mdl-card mdl-shadow--4dp my-card-fullwidth">
+            <div class="mdl-card__title mdl-color--accent mdl-color-text--accent-contrast">
+                {{card.title}}
+            </div>
+            <!--<div class="mdl-card__media">-->
+            <!--...-->
+            <!--</div>-->
+            <div class="mdl-card__supporting-text">
+                {{card.description}}
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+                <md-button class="
+                        md-ripple-effect
+                        md-primary
+                        ">
+                    View Milestones
+                </md-button>
+            </div>
+        </div>
+    </div>
+</div>

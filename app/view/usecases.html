@@ -4,22 +4,19 @@
         Loading...
     </div>
     <div class="mdl-cell mdl-cell--4-col mdl-cell--6-col-desktop"
-         ng-repeat="card in cards">
+         ng-repeat="usecase in usecases">
         <div class="mdl-card mdl-shadow--3dp milestone-card">
             <div class="mdl-card__title mdl-color--accent mdl-color-text--accent-contrast">
-                {{card.title}}
+                {{usecase.title}}
             </div>
-            <!--<div class="mdl-card__media">-->
-            <!--...-->
-            <!--</div>-->
             <div class="mdl-card__supporting-text">
-                <span ng-bind-html="card.body"></span>
+                <span ng-bind-html="usecase.body"></span>
             </div>
             <div class="mdl-card__actions mdl-card--border">
-                <md-button class="
-                        md-ripple-effect
-                        md-primary
-                        ">
+                <md-button
+                        class="md-ripple-effect md-primary"
+                        ng-click="showMilestones($event, usecase)"
+                >
                     View Milestones
                 </md-button>
             </div>

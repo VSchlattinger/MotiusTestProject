@@ -9,26 +9,26 @@ import 'angular-material'
 import 'angular-sanitize'
 
 import usecasesController from './controller/UsecasesController'
+import milestonesController from './controller/MilestonesController'
 import usecaseFactory from './factory/UsecaseFactory'
 
 'use strict';
 var app = angular.module('TestProject', ['ngRoute', 'ngAnimate', 'ngMaterial', 'ngSanitize']);
 
 app.factory("UseCasesService", usecaseFactory);
-app.controller('UseCasesController', usecasesController);
+app.controller('UsecasesController', usecasesController);
+app.controller('MilestonesController', milestonesController);
 
-app.config(['$routeProvider', '$locationProvider', '$mdThemingProvider',
-    function ($routeProvider, $locationProvider, $mdThemingProvider) {
+app.config(['$routeProvider', '$mdThemingProvider',
+    function ($routeProvider, $mdThemingProvider) {
 
         $routeProvider
         // route for the home page
             .when('/', {
                 templateUrl: 'app/view/usecases.html',
-                controller: 'UseCasesController'
+                controller: 'UsecasesController'
             })
             .otherwise({redirectTo: '/'});
-
-        $locationProvider.html5Mode(true);
 
         // Material Design Settings (colors should match the ones in the imported css in index.html)
         $mdThemingProvider

@@ -33,7 +33,7 @@ app.config(['$routeProvider', function ($routeProvider) {
         controller: 'UseCasesController'
     }).otherwise({ redirectTo: '/' });
 }]).config(['$mdThemingProvider', function ($mdThemingProvider) {
-    $mdThemingProvider.theme('default').primaryPalette('red').accentPalette('indigo');
+    $mdThemingProvider.theme('default').primaryPalette('indigo').accentPalette('pink');
 }]);
 
 app.controller('UseCasesController', _controllerUsecasesController2['default']);

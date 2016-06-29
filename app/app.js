@@ -26,8 +26,8 @@ app
 
     .config(['$mdThemingProvider', function ($mdThemingProvider) {
         $mdThemingProvider.theme('default')
-            .primaryPalette('red')
-            .accentPalette('indigo');
+            .primaryPalette('indigo')
+            .accentPalette('pink');
     }]);
 
 

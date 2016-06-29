@@ -30,6 +30,9 @@ var _factoryUsecaseFactory2 = _interopRequireDefault(_factoryUsecaseFactory);
 'use strict';
 var app = _angular2['default'].module('TestProject', ['ngRoute', 'ngAnimate', 'ngMaterial', 'ngSanitize']);
 
+app.factory("UseCasesService", _factoryUsecaseFactory2['default']);
+app.controller('UseCasesController', _controllerUsecasesController2['default']);
+
 app.config(['$routeProvider', '$locationProvider', '$mdThemingProvider', function ($routeProvider, $locationProvider, $mdThemingProvider) {
 
     $routeProvider
@@ -41,11 +44,9 @@ app.config(['$routeProvider', '$locationProvider', '$mdThemingProvider', functio
 
     $locationProvider.html5Mode(true);
 
+    // Material Design Settings (colors should match the ones in the imported css in index.html)
     $mdThemingProvider.theme('default').primaryPalette('indigo').accentPalette('pink');
 }]);
-
-app.factory("UseCasesService", _factoryUsecaseFactory2['default']);
-app.controller('UseCasesController', _controllerUsecasesController2['default']);
 
 },{"./controller/UsecasesController":2,"./factory/UsecaseFactory":3,"angular":17,"angular-animate":7,"angular-material":11,"angular-route":13,"angular-sanitize":15}],2:[function(require,module,exports){
 /**
@@ -56,10 +57,18 @@ app.controller('UseCasesController', _controllerUsecasesController2['default']);
 
 exports.__esModule = true;
 exports['default'] = ['$scope', 'UseCasesService', function ($scope, UseCasesService) {
+
+    $scope.loading = {
+        state: "loading"
+    };
+
     UseCasesService.getAll(function (_ref) {
         "use strict";
+
         var success = _ref.success;
         var usecases = _ref.usecases;
+        $scope.loading.state = "finished";
+
         if (success) {
             $scope.cards = usecases;
         } else {

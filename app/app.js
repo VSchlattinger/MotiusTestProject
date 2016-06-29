@@ -14,6 +14,9 @@ import usecaseFactory from './factory/UsecaseFactory'
 'use strict';
 var app = angular.module('TestProject', ['ngRoute', 'ngAnimate', 'ngMaterial', 'ngSanitize']);
 
+app.factory("UseCasesService", usecaseFactory);
+app.controller('UseCasesController', usecasesController);
+
 app.config(['$routeProvider', '$locationProvider', '$mdThemingProvider',
     function ($routeProvider, $locationProvider, $mdThemingProvider) {
 
@@ -27,11 +30,9 @@ app.config(['$routeProvider', '$locationProvider', '$mdThemingProvider',
 
         $locationProvider.html5Mode(true);
 
+        // Material Design Settings (colors should match the ones in the imported css in index.html)
         $mdThemingProvider
             .theme('default')
             .primaryPalette('indigo')
             .accentPalette('pink');
     }]);
-
-app.factory("UseCasesService", usecaseFactory);
-app.controller('UseCasesController', usecasesController);

@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <div class="mdl-grid">
-    <div class="mdl-cell mdl-cell--4-col" ng-repeat="card in cards">
-        <div class="mdl-card mdl-shadow--4dp my-card-fullwidth">
+    <div ng-if="loading.state === 'loading'" class="vertical-margin-20 text-center mdl-typography--headline">
+        Loading...
+    </div>
+    <div class="mdl-cell mdl-cell--4-col mdl-cell--6-col-desktop"
+         ng-repeat="card in cards">
+        <div class="mdl-card mdl-shadow--3dp milestone-card">
             <div class="mdl-card__title mdl-color--accent mdl-color-text--accent-contrast">
                 {{card.title}}
             </div>

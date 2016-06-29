@@ -1,8 +1,19 @@
-.my-card-fullwidth {
+.milestone-card {
     width: 100%;
     min-height: 0;
+    max-width: 400px;
+    margin: 4px auto;
 }
 
 .mdl-grid {
-    max-width: 1170px;
+    max-width: 840px;
+}
+
+.text-center {
+    width: 100%;
+    text-align: center;
+}
+
+.vertical-margin-20 {
+    margin: 20px 0;
 }

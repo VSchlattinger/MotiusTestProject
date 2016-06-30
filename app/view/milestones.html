@@ -3,7 +3,7 @@
     <form>
         <md-toolbar>
             <div class="md-toolbar-tools">
-                <h2>{{title}}</h2>
+                <h2>Milestones</h2>
                 <span flex></span>
                 <md-button class="md-icon-button" ng-click="hide()">
                     <md-icon md-svg-src="./img/ic_close_white_24px.svg" aria-label="Close timeline"></md-icon>
@@ -12,6 +12,9 @@
         </md-toolbar>
         <md-dialog-content>
             <div class="md-dialog-content">
+                <p class="md-title">
+                    {{title}}
+                </p>
                 <!-- call function inside div to make sure view has been loaded -->
                 <div id="timeline">{{showTimeline()}}</div>
             </div>

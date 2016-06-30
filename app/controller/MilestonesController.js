@@ -6,7 +6,7 @@ import vis from 'vis'
 
 export default ['$scope', '$mdDialog', 'locals', function ($scope, $mdDialog, {title, milestones}) {
 
-    $scope.title = `Milestones - ${title}`;
+    $scope.title = title;
 
     $scope.hide = function () {
         $mdDialog.hide();

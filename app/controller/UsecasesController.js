@@ -22,7 +22,7 @@ export default ['$scope', '$mdDialog', 'UseCasesService', function ($scope, $mdD
                         title,
                         supportingText: body,
                         showActions: milestones.length > 0,
-                        milestones
+                        milestones  // save milestones in card for easy access in 'showMilestones' function
                     };
                 }
             );
@@ -38,8 +38,9 @@ export default ['$scope', '$mdDialog', 'UseCasesService', function ($scope, $mdD
             templateUrl: './app/view/milestones.html',
             targetEvent: ev,
             clickOutsideToClose: true,
+            fullscreen: true,   // show dialog in fullscreen on phones and tablets
             ariaLabel: 'Milestones',
-            locals: {
+            locals: {   // inject title and milestones into MilestonesController
                 title,
                 milestones
             }

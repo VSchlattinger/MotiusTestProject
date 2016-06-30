@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <div class="mdl-grid">
-    <div ng-if="loading.state === 'loading'" class="vertical-margin-20 text-center mdl-typography--headline">
+    <div ng-if="state.loading" class="vertical-margin-20 text-center mdl-typography--headline">
         Loading...
     </div>
     <div class="mdl-cell mdl-cell--4-col mdl-cell--6-col-desktop"
-         ng-repeat="usecase in usecases">
+         ng-repeat="card in cards">
         <div class="mdl-card mdl-shadow--3dp usecase-card">
             <div class="mdl-card__title mdl-color--accent mdl-color-text--accent-contrast">
-                {{usecase.title}}
+                {{card.title}}
             </div>
             <div class="mdl-card__supporting-text">
-                <span ng-bind-html="usecase.body"></span>
+                <span ng-bind-html="card.supportingText"></span>
             </div>
-            <div class="mdl-card__actions mdl-card--border">
+            <div ng-if="card.showActions" class="mdl-card__actions mdl-card--border">
                 <md-button
                         class="md-ripple-effect md-primary"
-                        ng-click="showMilestones($event, usecase)"
+                        ng-click="showMilestones($event, card)"
                 >
-                    View Milestones
+                    Milestones
                 </md-button>
             </div>
         </div>

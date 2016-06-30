@@ -3,19 +3,24 @@
     <form>
         <md-toolbar>
             <div class="md-toolbar-tools">
-                <h2>Milestones - {{usecase.title}}</h2>
+                <h2>{{title}}</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="hide()">
+                    <md-icon md-svg-src="./img/ic_close_white_24px.svg" aria-label="Close timeline"></md-icon>
+                </md-button>
             </div>
         </md-toolbar>
         <md-dialog-content>
             <div class="md-dialog-content">
+                <!-- call function inside div to make sure view has been loaded -->
                 <div id="timeline">{{showTimeline()}}</div>
             </div>
         </md-dialog-content>
-        <md-dialog-actions layout="row">
-            <span flex></span>
-            <md-button ng-click="hide()">
-                Dismiss
-            </md-button>
-        </md-dialog-actions>
+        <!--<md-dialog-actions layout="row">-->
+            <!--<span flex></span>-->
+            <!--<md-button ng-click="hide()">-->
+                <!--Close-->
+            <!--</md-button>-->
+        <!--</md-dialog-actions>-->
     </form>
 </md-dialog>

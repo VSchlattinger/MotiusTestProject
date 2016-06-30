@@ -6,9 +6,9 @@ export default class Milestone {
 
     constructor({id, name, start_date, end_date}) {
         this.id = id;
-        this.content = name;
-        this.start = start_date;
-        this.end = end_date;
+        this.name = name;
+        this.start_date = start_date;
+        this.end_date = end_date;
     }
 
 }

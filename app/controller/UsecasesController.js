@@ -22,7 +22,7 @@ export default ['$scope', '$mdDialog', 'UseCasesService', function ($scope, $mdD
                         title,
                         supportingText: body,
                         showActions: milestones.length > 0,
-                        usecase: {title, milestones}
+                        milestones
                     };
                 }
             );
@@ -31,7 +31,7 @@ export default ['$scope', '$mdDialog', 'UseCasesService', function ($scope, $mdD
         }
     });
 
-    $scope.showMilestones = function (ev, {usecase}) {
+    $scope.showMilestones = function (ev, {title, milestones}) {
         "use strict";
         $mdDialog.show({
             controller: 'MilestonesController',
@@ -40,7 +40,8 @@ export default ['$scope', '$mdDialog', 'UseCasesService', function ($scope, $mdD
             clickOutsideToClose: true,
             ariaLabel: 'Milestones',
             locals: {
-                usecase
+                title,
+                milestones
             }
         });
     };

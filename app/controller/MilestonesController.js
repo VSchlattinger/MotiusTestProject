@@ -4,9 +4,9 @@
 
 import vis from 'vis'
 
-export default ['$scope', '$mdDialog', 'locals', function ($scope, $mdDialog, {usecase}) {
+export default ['$scope', '$mdDialog', 'locals', function ($scope, $mdDialog, {title, milestones}) {
 
-    $scope.title = `Milestones - ${usecase.title}`;
+    $scope.title = `Milestones - ${title}`;
 
     $scope.hide = function () {
         $mdDialog.hide();
@@ -22,7 +22,7 @@ export default ['$scope', '$mdDialog', 'locals', function ($scope, $mdDialog, {u
         let container = document.querySelector('#timeline');
         if (container) {
             // map fields of Milestone to required fields by vis.Timeline's data argument
-            let data = usecase.milestones.map(
+            let data = milestones.map(
                 function ({id, name, start_date, end_date}) {
                     "use strict";
                     return {

@@ -1,4 +1,4 @@
-.milestone-card {
+.usecase-card {
     width: 100%;
     min-height: 0;
     max-width: 400px;
@@ -16,4 +16,8 @@
 
 .vertical-margin-20 {
     margin: 20px 0;
+}
+
+.milestone-dialog {
+    width: 100%;
 }

@@ -13,15 +13,14 @@ export default ['$http', function ($http) {
         getAll: function (callback) {
             $http.get(url)
                 .then(
-                    function successCallback(response) {
-                        let usecases = [];
-                        response.data.forEach(
-                            usecase => usecases.push(new Usecase(usecase))
+                    function successCallback({data}) {
+                        let usecases = data.map(
+                            item => new Usecase(item)
                         );
                         callback({success: true, usecases});
                     },
-                    function errorCallback(response) {
-                        console.log(response.status, response.statusText);
+                    function errorCallback({status, statusText}) {
+                        console.log(status, statusText);
                         callback({success: false});
                     }
                 )

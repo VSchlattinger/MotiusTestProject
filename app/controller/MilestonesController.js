@@ -15,10 +15,13 @@ export default ['$scope', '$mdDialog', 'locals', function ($scope, $mdDialog, {u
     //setup timeline
     let timeline = null;
     $scope.showTimeline = function () {
-        //Here your view content is fully loaded !!
         let container = document.querySelector('#timeline');
         if (container && !timeline) {
-            timeline = new vis.Timeline(container, usecase.milestones, {});
+            timeline = new vis.Timeline(
+                container,              //DOM element
+                usecase.milestones,     //data
+                {}                      //options
+            );
         }
     };
 
